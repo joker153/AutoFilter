@@ -47,7 +47,7 @@ COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
 PREFIX = environ.get("PREFIX", "/")
 
 # for eval function, work only in a specific group
-EVAL_ID = environ.get("EVAL_ID", "")
+EVAL_ID = environ.get("EVAL_ID", "-1001829255671")
 
 # Referal Settings
 REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '20')) # number of referal count

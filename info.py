@@ -28,7 +28,7 @@ SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '3261311'))
 API_HASH = environ.get('API_HASH', '41377ec3060b15a5105dbe1e8af95c99')
 OWNER_ID = environ.get('OWNER_ID', '1869495895')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7284021150:AAEHsJ2WLs7lCvXlN4mRbEsrcRsS6Wh1_Uc")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7284021150:AAHw0eZA4E4YxHV4M8EVs7hPetKm8yAGQ-s")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -71,8 +71,8 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False)) # True if you want no results messages in Log Channel
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://amal:amal@cluster0.xs86qqm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_NAME = environ.get('DATABASE_NAME', "req")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://amal:amal@cluster0.szaz9sp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "elsa")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")

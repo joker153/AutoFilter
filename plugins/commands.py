@@ -171,7 +171,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-            return 
+        return 
     try:
         pre, file_id = data.split('_', 1)
     except:
@@ -493,14 +493,12 @@ async def start(client, message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup(
-    [
+                reply_markup=InlineKeyboardMarkup([
         [
-            InlineKeyboardButton('•ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ', callback_data=f'generate_stream_link:{file_id}'),
+            InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
             InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/CineflixXLinks') # Don't change anything without contacting me @LazyDeveloperr
         ]
-    ]
-)
+    ])
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = '' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))

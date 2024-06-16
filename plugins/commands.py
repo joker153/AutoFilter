@@ -51,16 +51,16 @@ async def send_chatmsg(bot, message):
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [[
-                    InlineKeyboardButton('• ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛ •', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('• ᴍᴀsᴛᴇʀ •', url="https://t.me/AmalserTg"),
-                    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/CineflixXLinks')
-                ],[
-                    InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/CineflixXLinks")
-                  ]]
+        buttons = [
+            [
+                InlineKeyboardButton('🤖 Updates', url=(MAIN_CHANNEL))
+            ],
+            [
+                InlineKeyboardButton('ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
+            ]
+            ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.GSTART_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
+        await message.reply(script.GSTART_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -72,42 +72,15 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('• ꜱᴜᴩᴩᴏʀᴛ •', callback_data='group_info')
-                ],[
-                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
-                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                ],[
-                    InlineKeyboardButton('• ɢᴇᴛ ғʀᴇᴇ or ᴘᴀɪᴅ ᴘʀᴇᴍɪᴜᴍ •', callback_data="premium_info")
-                  ]]
+            InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        current_time = datetime.now(pytz.timezone(TIMEZONE))
-        curr_time = current_time.hour        
-        if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 👋" 
-        elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 👋" 
-        elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
-        else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
-        m=await message.reply_text("<i>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ <b>ʟᴜᴄʏ</b>.\nʜᴏᴘᴇ ʏᴏᴜ'ʀᴇ ᴅᴏɪɴɢ ᴡᴇʟʟ...</i>")
-        await asyncio.sleep(0.4)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.5)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>sᴛᴀʀᴛɪɴɢ ʙᴏᴛ...</i></b>")
-        await asyncio.sleep(0.4)
-        await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAEBt1Jlx6H4hU132BpZrG-DqKF5SveK2QACawUAAqzQYVYtbBdxglzmPR4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA") 
         await asyncio.sleep(1)
-        await m.delete()
+        await m.delete()        
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -135,7 +108,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_photo(
             chat_id=message.from_user.id,
-            photo="https://graph.org/file/9649c1dcbae09f2e7700e.jpg",
+            photo="https://graph.org/file/92d419484344ed04ee0b5.png",
             caption="<b>ᴊᴏɪɴ ᴏᴜʀ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʀʏ ᴀɢᴀɪɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇ.</b>",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
@@ -143,42 +116,12 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('• ꜱᴜᴩᴩᴏʀᴛ •', callback_data='group_info')
-                ],[
-                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
-                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                ],[
-                    InlineKeyboardButton('• ɢᴇᴛ ғʀᴇᴇ or ᴘᴀɪᴅ ᴘʀᴇᴍɪᴜᴍ •', callback_data="premium_info")
-                  ]]
+            InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        current_time = datetime.now(pytz.timezone(TIMEZONE))
-        curr_time = current_time.hour        
-        if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 👋" 
-        elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 👋" 
-        elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
-        else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
-        m=await message.reply_text("<i>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ <b>ʟᴜᴄʏ</b>.\nʜᴏᴘᴇ ʏᴏᴜ'ʀᴇ ᴅᴏɪɴɢ ᴡᴇʟʟ...</i>")
-        await asyncio.sleep(0.4)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.5)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ ʙᴏᴛ...</i></b>")
-        await asyncio.sleep(0.4)
-        await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAEBt1Jlx6H4hU132BpZrG-DqKF5SveK2QACawUAAqzQYVYtbBdxglzmPR4E") 
-        await asyncio.sleep(1)
-        await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -219,26 +162,15 @@ async def start(client, message):
                     return 
         else:
             buttons = [[
-                    InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('• ꜱᴜᴩᴩᴏʀᴛ •', callback_data='group_info')
-                ],[
-                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
-                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                ],[
-                    InlineKeyboardButton('• ɢᴇᴛ ғʀᴇᴇ or ᴘᴀɪᴅ ᴘʀᴇᴍɪᴜᴍ •', callback_data="premium_info")
-                  ]]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            m=await message.reply_sticker("CAACAgUAAxkBAAECQNBmEPRJUuLrUDvpzQwsvs0KE1w5jgACcAQAAkdoOVaYU-q7wXAETB4E") 
-            await asyncio.sleep(1)
-            await m.delete()
-            await message.reply_photo(
-                photo=random.choice(PICS),
-                caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
+            InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
             return 
     try:
         pre, file_id = data.split('_', 1)
@@ -562,16 +494,13 @@ async def start(client, message):
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
-            [
-             [
-              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
-             ],
-             [
-              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
-             ]
-            ]
-        )
-    )
+    [
+        [
+            InlineKeyboardButton('•ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ', callback_data=f'generate_stream_link:{file_id}'),
+            InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/CineflixXLinks') # Don't change anything without contacting me @LazyDeveloperr
+        ]
+    ]
+)
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = '' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
@@ -625,16 +554,13 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
-            [
-             [
-              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
-             ],
-             [
-              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
-             ]
-            ]
-        )
-    )
+    [
+        [
+            InlineKeyboardButton('• ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ', callback_data=f'generate_stream_link:{file_id}'),
+            InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/CineflixXLinks') # Don't change anything without contacting me @LazyDeveloperr
+        ]
+    ]
+)
     btn = [[
         InlineKeyboardButton("❗ ɢᴇᴛ ꜰɪʟᴇ ᴀɢᴀɪɴ ❗", callback_data=f'delfile#{file_id}')
     ]]
@@ -1306,7 +1232,7 @@ async def help_command(client, message):
 async def support_command(client, message):
     buttons = [
         [
-            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/CineflixXLinks"),
+            InlineKeyboardButton("• ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ •", url="https://t.me/elzamoviebot?start=help"),
             InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/CineflixXLinks")
         ]
     ]

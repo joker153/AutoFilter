@@ -1489,9 +1489,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             hp_link = await get_shortlink(lazy_download)
             ph_link = await get_shortlink(lazy_stream)
             buttons = []
-            if await query.answer("""❗️ ɪᴍᴘᴏʀᴛᴀɴᴛ ❗️
-
-ᴛʜɪꜱ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 10 ᴍɪɴᴜᴛᴇꜱ (ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇꜱ).""", show_alert=True):                               
+            if await query.answer():                               
                 buttons = [[
                     InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download),
                     InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •", url=lazy_stream)

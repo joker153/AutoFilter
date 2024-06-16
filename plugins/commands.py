@@ -280,9 +280,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ •', callback_data=f'generate_stream_link:{file_id}'),
-                            ],
-                            [
+                                InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -299,9 +297,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ •', callback_data=f'generate_stream_link:{file_id}'),
-                            ],
-                            [
+                                InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -489,8 +485,6 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ', callback_data=f'generate_stream_link:{file_id}'),
-                            ],
-                            [
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -564,10 +558,8 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
-             ],
-             [
-              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
+              InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
+              InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
              ]
             ]
         )
@@ -628,8 +620,6 @@ async def start(client, message):
             [
              [
               InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
-             ],
-             [
               InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
              ]
             ]

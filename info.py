@@ -151,7 +151,7 @@ else:
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '68.183.190.121:8080'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
 URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "http://{}/".format(FQDN, PORT)
+    "http://{}:{}/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -164,12 +164,13 @@ if 'DYNO' in environ:
 
 else:
     ON_HEROKU = False
-HAS_SSL=bool(getenv('HAS_SSL',True))
+HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
     URL = "https://{}/".format(FQDN)
 else:
     URL = "http://{}/".format(FQDN)
-
+BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001987654567")).split())) 
+OWNER_USERNAME = "LazyDeveloper"
 # add premium logs channel id
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002049486679'))
 

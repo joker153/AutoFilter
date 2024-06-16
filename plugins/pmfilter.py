@@ -102,7 +102,7 @@ async def fil_mod(client, message):
         await m.edit("ᴜsᴇ :- /autofilter on ᴏʀ /autofilter off")
 
 
-@Client.on_message((filters.private | filters.group) & filters.text & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
         manual = await manual_filters(client, message)
@@ -190,18 +190,16 @@ async def next_page(bot, query):
         ]
 
 
-    
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
-            ]
-        )
-    
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
         )
         
@@ -214,7 +212,9 @@ async def next_page(bot, query):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-
+        btn.insert(0, [
+            InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
+        ])
 
     try:
         if settings['max_btn']:
@@ -419,7 +419,11 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
@@ -427,15 +431,15 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-        )
+        
 
     else:
         btn = []
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
@@ -443,13 +447,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-        )
 
-    
     if offset != "":
         try:
             if settings['max_btn']:
@@ -579,35 +577,33 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-                  )
-        
-       btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-                 )
+        )
+   
     else:
         btn = []
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-                  )
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-                  )
+        )
         
 
     if offset != "":
@@ -769,26 +765,24 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-                  )
+        btn.insert(0, [
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}"),
+            InlineKeyboardButton("ꜱᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
+        ])
     else:
         btn = []
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+            ]
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-                  )
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
-            ]
-                  )
+        )
    
     
     offset = 0
@@ -1481,11 +1475,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
-    elif lazyData.startswith("generate_stream_link"):
-        _, file_id = lazyData.split(":")
+    elif data.startswith("generate_stream_link"):
+        _, file_id = data.split(":")
         try:
             user_id = query.from_user.id
-            username = query.from_user.mention 
+            username =  query.from_user.mention 
+
             log_msg = await client.send_cached_media(
                 chat_id=LOG_CHANNEL,
                 file_id=file_id,
@@ -1493,45 +1488,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             fileName = {quote_plus(get_name(log_msg))}
             lazy_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             lazy_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            hp_link = await get_shortlink(lazy_download)
-            ph_link = await get_shortlink(lazy_stream)
-            buttons = []
-            web_app_button = InlineKeyboardButton(
-            text="Launch Web App",
-            url="https://your-web-app-url.com")
-            if await query.answer("""❗️ ɪᴍᴘᴏʀᴛᴀɴᴛ ❗️
 
-ᴛʜɪꜱ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 10 ᴍɪɴᴜᴛᴇꜱ (ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇꜱ).""", show_alert=True):                               
-                web_app_button = InlineKeyboardButton( text="ᴡᴀᴛᴄʜ ɪɴ ᴡᴇʙ ᴀᴘᴘ", url=lazy_stream)
-buttons = [[ InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download), InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •", url=lazy_stream) ],[ InlineKeyboardButton(' ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ', url='https://t.me/CineflixXLinks') ]]
-buttons.append([web_app_button])
-            else:
-                await query.answer("🚸 ɴᴏᴛᴇ :\nᴀᴅ-ꜰʀᴇᴇ ꜱᴇʀᴠɪᴄᴇ ɪꜱ ᴏɴʟʏ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʜᴇᴄᴋ ᴘʟᴀɴꜱ.", show_alert=True)
-                await query.message.reply_text(
-                text="<b>‼️ ᴡᴀɴᴛ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ?\n\n✅ ᴘᴜʀᴄʜᴀꜱᴇ ᴘʀᴇᴍɪᴜᴍ ᴀɴᴅ ᴇɴᴊᴏʏ ᴀᴅ-ꜰʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ.</b>",
-                quote=True,
-                disable_web_page_preview=True,                  
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 💸", callback_data='seeplans')]]))
-                buttons = [[
-                    InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=hp_link),
-                    InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •", url=ph_link)
-                ],[
-                    InlineKeyboardButton('❗ʜᴏᴡ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋ❗', url=STREAMHTO)
-                ]]
-    
-            query.message.reply_markup = query.message.reply_markup or []
-            query.message.reply_markup.inline_keyboard.pop(0)
-            query.message.reply_markup.inline_keyboard.insert(0, buttons)
-            await query.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
+            xo = await query.message.reply_text(f'🔐')
+            await asyncio.sleep(1)
+            await xo.delete()
+
             await log_msg.reply_text(
-                    text=f"#LinkGenrated\n\nIᴅ : <code>{user_id}</code>\nUꜱᴇʀɴᴀᴍᴇ : {username}\n\nNᴀᴍᴇ : {fileName}",
-                    quote=True,
-                    disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=hp_link),
-                                                        InlineKeyboardButton('ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', url=ph_link)]]))  
+                text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
+                quote=True,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("web Download", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('▶Stream online', url=lazy_stream)]])  # web stream Link
+            )
+            await query.message.reply_text(
+                text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
+                quote=True,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("web Download", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('▶Stream online', url=lazy_stream)]])  # web stream Link
+            )
         except Exception as e:
             print(e)  # print the error message
-            await query.answer(f"⚠️Error Myre \n\n{e}", show_alert=True)
+            await query.answer(f"☣something went wrong sweetheart\n\n{e}", show_alert=True)
             return
 
     # don't change anything without contacting me @cryxelys
@@ -1549,44 +1527,32 @@ buttons.append([web_app_button])
     elif query.data == "sinfo":
         await query.answer(text=script.SINFO, show_alert=True)
 
-
-
-    elif query.data == "surprise":
-        btn = [[
-            InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(btn)
-        await client.edit_message_media(
-            query.message.chat.id,
-            query.message.id,
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.SUR_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('ᴏᴡɴ ɪɴғᴏ', url='https://t.me/Amalsertg')
-        ], [
-            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
-        ], [
-            InlineKeyboardButton('ʙᴀᴄᴋ ᴛᴏ sᴛᴀʀᴛ', callback_data='surprise')
-        ]]
+                    InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
+                    InlineKeyboardButton('• ꜱᴜᴩᴩᴏʀᴛ •', callback_data='group_info')
+                ],[
+                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
+                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
+                ],[
+                    InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ ʀᴇᴍᴏᴠᴇ ᴀᴅs •', callback_data="premium_info")
+                  ]]
+        
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id,
-            query.message.id,
-            InputMediaPhoto(random.choice(PICS))
-        )
+        current_time = datetime.now(pytz.timezone(TIMEZONE))
+        curr_time = current_time.hour        
+        if curr_time < 12:
+            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 👋" 
+        elif curr_time < 17:
+            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 👋" 
+        elif curr_time < 21:
+            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
+        else:
+            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.START_TXT.format(query.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -3126,14 +3092,14 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
             ]
-                  )
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-                  )
+        )
         btn.insert(0, [
             InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
             InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
@@ -3145,14 +3111,14 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
             ]
-                  )
+        )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-                  )
+        )
         btn.insert(0, [
             InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
             InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")

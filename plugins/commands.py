@@ -556,20 +556,20 @@ async def start(client, message):
         return
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
-        file_id=file_id,
+        file_id=file_id,   
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
-             ],
-             [
-              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
+              InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
+              InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
              ]
             ]
         )
     )
+
+
     btn = [[
         InlineKeyboardButton("❗ ɢᴇᴛ ꜰɪʟᴇ ᴀɢᴀɪɴ ❗", callback_data=f'delfile#{file_id}')
     ]]

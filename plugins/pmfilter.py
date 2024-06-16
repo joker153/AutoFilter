@@ -190,16 +190,18 @@ async def next_page(bot, query):
         ]
 
 
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
-            ]
-        )
+    
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
+            ]
+        )
+    
+        btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
         )
         
@@ -212,9 +214,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
-        ])
+
 
     try:
         if settings['max_btn']:
@@ -419,11 +419,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
-            ]
-        )
+        
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
@@ -431,15 +427,15 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-        
+        btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
+            ]
+        )
 
     else:
         btn = []
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
-            ]
-        )
+        
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
@@ -447,7 +443,13 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
+        btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
+            ]
+        )
 
+    
     if offset != "":
         try:
             if settings['max_btn']:
@@ -577,11 +579,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
-            ]
-        )
+        
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
@@ -589,19 +587,25 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
-   
+        
+       btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
+            ]
+        )
     else:
         btn = []
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
-            ]
-        )
+        
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
+            ]
+        )
+        btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
         )
         
@@ -765,22 +769,24 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, [
-            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}"),
-            InlineKeyboardButton("ꜱᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
-        ])
-    else:
-        btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
         )
+    else:
+        btn = []
+        
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
+            ]
+        )
+        btn.insert(0, 
+            [
+                InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
         )
    
@@ -1490,15 +1496,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             hp_link = await get_shortlink(lazy_download)
             ph_link = await get_shortlink(lazy_stream)
             buttons = []
+            web_app_button = InlineKeyboardButton(
+            text="Launch Web App",
+            url="https://your-web-app-url.com")
             if await query.answer("""❗️ ɪᴍᴘᴏʀᴛᴀɴᴛ ❗️
 
 ᴛʜɪꜱ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 10 ᴍɪɴᴜᴛᴇꜱ (ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇꜱ).""", show_alert=True):                               
-                buttons = [[
-                    InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download),
-                    InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •", url=lazy_stream)
-                ],[
-                    InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url='https://t.me/CineflixXLinks')
-                ]]
+                web_app_button = InlineKeyboardButton( text="ᴡᴀᴛᴄʜ ɪɴ ᴡᴇʙ ᴀᴘᴘ", url=lazy_stream)
+buttons = [[ InlineKeyboardButton("• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download), InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •", url=lazy_stream) ],[ InlineKeyboardButton(' ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ', url='https://t.me/CineflixXLinks') ]]
+buttons.append([web_app_button])
             else:
                 await query.answer("🚸 ɴᴏᴛᴇ :\nᴀᴅ-ꜰʀᴇᴇ ꜱᴇʀᴠɪᴄᴇ ɪꜱ ᴏɴʟʏ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʜᴇᴄᴋ ᴘʟᴀɴꜱ.", show_alert=True)
                 await query.message.reply_text(
@@ -1543,32 +1549,44 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "sinfo":
         await query.answer(text=script.SINFO, show_alert=True)
 
+
+
+    elif query.data == "surprise":
+        btn = [[
+            InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(btn)
+        await client.edit_message_media(
+            query.message.chat.id,
+            query.message.id,
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SUR_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('• ꜱᴜᴩᴩᴏʀᴛ •', callback_data='group_info')
-                ],[
-                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
-                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                ],[
-                    InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ ʀᴇᴍᴏᴠᴇ ᴀᴅs •', callback_data="premium_info")
-                  ]]
-        
+            InlineKeyboardButton('× ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('ᴏᴡɴ ɪɴғᴏ', url='https://t.me/Amalsertg')
+        ], [
+            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+        ], [
+            InlineKeyboardButton('ʙᴀᴄᴋ ᴛᴏ sᴛᴀʀᴛ', callback_data='surprise')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        current_time = datetime.now(pytz.timezone(TIMEZONE))
-        curr_time = current_time.hour        
-        if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 👋" 
-        elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 👋" 
-        elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
-        else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
+        await client.edit_message_media(
+            query.message.chat.id,
+            query.message.id,
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )

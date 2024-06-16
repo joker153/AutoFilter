@@ -9,5 +9,5 @@ else
 fi
 cd /AutoFilter
 pip3 install -U -r requirements.txt
-echo "sᴛᴀʀᴛɪɴɢ ʟᴜᴄʏ ʙᴏᴛ...."
+echo "sᴛᴀʀᴛɪɴɢ ᴇʟᴢᴀ ʙᴏᴛ...."
 python3 bot.py

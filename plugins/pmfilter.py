@@ -586,13 +586,13 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-        )
+                  )
         
        btn.insert(0, 
             [
                 InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
-        )
+                 )
     else:
         btn = []
         
@@ -602,12 +602,12 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-        )
+                  )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
-        )
+                  )
         
 
     if offset != "":
@@ -773,7 +773,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
-        )
+                  )
     else:
         btn = []
         
@@ -783,12 +783,12 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-        )
+                  )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f' ☟ ᴄʜᴏᴏꜱᴇ ʙᴇʟᴏᴡ ᴏᴘᴛɪᴏɴꜱ ☟ ', url=f"https://t.me/{temp.U_NAME}")
             ]
-        )
+                  )
    
     
     offset = 0
@@ -3126,14 +3126,14 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
             ]
-        )
+                  )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-        )
+                  )
         btn.insert(0, [
             InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
             InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
@@ -3145,14 +3145,14 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", 'reqinfo')
             ]
-        )
+                  )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
-        )
+                  )
         btn.insert(0, [
             InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", url=f"https://t.me/CineflixXLinks"),
             InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")

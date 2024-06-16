@@ -108,7 +108,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_photo(
             chat_id=message.from_user.id,
-            photo="https://graph.org/file/92d419484344ed04ee0b5.png",
+            photo="https://graph.org/file/9649c1dcbae09f2e7700e.jpg",
             caption="<b>ᴊᴏɪɴ ᴏᴜʀ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʀʏ ᴀɢᴀɪɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇ.</b>",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
@@ -164,14 +164,17 @@ async def start(client, message):
             buttons = [[
             InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', callback_data='start')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        return 
+            reply_markup = InlineKeyboardMarkup(buttons)
+            m=await message.reply_sticker("CAACAgUAAxkBAAECQNBmEPRJUuLrUDvpzQwsvs0KE1w5jgACcAQAAkdoOVaYU-q7wXAETB4E") 
+            await asyncio.sleep(1)
+            await m.delete()
+            await message.reply_photo(
+                photo=random.choice(PICS),
+                caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+            return 
     try:
         pre, file_id = data.split('_', 1)
     except:
@@ -493,12 +496,17 @@ async def start(client, message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup([
-        [
-            InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
-            InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/CineflixXLinks') # Don't change anything without contacting me @LazyDeveloperr
-        ]
-    ])
+                reply_markup=InlineKeyboardMarkup(
+            [
+             [
+              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
+             ],
+             [
+              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
+             ]
+            ]
+        )
+    )
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = '' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
@@ -552,13 +560,16 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton('• ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ', callback_data=f'generate_stream_link:{file_id}'),
-            InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/CineflixXLinks') # Don't change anything without contacting me @LazyDeveloperr
-        ]
-    ]
-)
+            [
+             [
+              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
+             ],
+             [
+              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
+             ]
+            ]
+        )
+    )
     btn = [[
         InlineKeyboardButton("❗ ɢᴇᴛ ꜰɪʟᴇ ᴀɢᴀɪɴ ❗", callback_data=f'delfile#{file_id}')
     ]]
@@ -1230,8 +1241,8 @@ async def help_command(client, message):
 async def support_command(client, message):
     buttons = [
         [
-            InlineKeyboardButton("• ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ •", url="https://t.me/elzamoviebot?start=help"),
-            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/CineflixXLinks")
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/CineflixXLinks"),
+            InlineKeyboardButton("ʜᴇʟᴘ", url="https://t.me/elzamoviebot?start=help")
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)

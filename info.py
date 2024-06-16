@@ -34,7 +34,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "6426072097:AAFpvNEzW65qVT6XwTxzafDLJKFk-Xt
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://graph.org/file/5e1f8888547a1a896a902.jpg https://graph.org/file/9649c1dcbae09f2e7700e.jpg')).split() #SAMPLE PIC
+PICS = os.environ.get('PICS', 'https://telegra.ph/file/2992a480cae2bc0de1c39.jpg https://telegra.ph/file/76e7b5e94430b84a3d2b2.jpg https://telegra.ph/file/3544a8773740b0412c9dd.jpg https://telegra.ph/file/4b1c7004ea8bd3fed8df9.jpg https://telegra.ph/file/a02e47d932adc336740fa.jpg').split()
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/549fd9f3272214acade82.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://graph.org/file/ccf3cbc4687263ac63420.jpg")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/549fd9f3272214acade82.jpg")
@@ -64,8 +64,8 @@ auth_channel = environ.get('AUTH_CHANNEL', '') #Channel / Group Id for force sub
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001566837125') # support group id ( make sure bot is admin )
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001905367057') # request channel id ( make sure bot is admin )
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002152826514') # support group id ( make sure bot is admin )
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002049486679') # request channel id ( make sure bot is admin )
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False)) # True if you want no results messages in Log Channel
@@ -95,7 +95,7 @@ STREAMHTO = (environ.get('STREAMHTO', ''))
 
 # Verify
 VERIFY = bool(environ.get('VERIFY', False)) # Verification On ( True ) / Off ( False )
-HOWTOVERIFY = environ.get('HOWTOVERIFY', 'https://t.me/How_to_Download_7x/26') # How to open tutorial link for verification
+HOWTOVERIFY = environ.get('HOWTOVERIFY', '') # How to open tutorial link for verification
 
 # Others
 SHORTLINK_URL = environ.get('SHORTLINK_URL', '')
@@ -105,18 +105,18 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-BOT_USERNAME = environ.get("BOT_USERNAME", "Lucy_Filter_bot")
-BOT_NAME = environ.get("BOT_NAME", "𝐋ᴜᴄʏ")
-BOT_ID = environ.get("BOT_ID", "6040310745")
-S_GROUP = environ.get('S_GROUP', "weebs_support")
+BOT_USERNAME = environ.get("BOT_USERNAME", "elzamoviebot")
+BOT_NAME = environ.get("BOT_NAME", "ᴇʟᴢᴀ")
+BOT_ID = environ.get("BOT_ID", "7284021150")
+S_GROUP = environ.get('S_GROUP', "CineflixXLinks")
 S_CHANNEL = environ.get('S_CHANNEL', "codeflix_bots")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/movie7xchat')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/team_netflix')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/How_to_Download_7x/32') # Tutorial video link for opening shortlink website 
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/CineflixXLinks')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/CineflixXLinks')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/CineflixXLinks') # Tutorial video link for opening shortlink website 
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : ᴄᴏᴅᴇғʟɪx ʙᴏᴛs')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002049486679')) #Log channel id ( make sure bot is admin )
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+DnmZbLjS0iw0YWI1') #Support group link ( make sure bot is admin )
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+wKykG4HRlQlkZTVl') #Support group link ( make sure bot is admin )
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)

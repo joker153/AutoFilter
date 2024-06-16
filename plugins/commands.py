@@ -216,8 +216,6 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ •', callback_data=f'generate_stream_link:{file_id}'),
-                            ],
-                            [
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -235,8 +233,6 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ •', callback_data=f'generate_stream_link:{file_id}'),
-                            ],
-                            [
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]

@@ -102,7 +102,7 @@ async def start(client, message):
         await m.edit_text("<b><i>sᴛᴀʀᴛɪɴɢ ʙᴏᴛ...</i></b>")
         await asyncio.sleep(0.4)
         await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEBt1Jlx6H4hU132BpZrG-DqKF5SveK2QACawUAAqzQYVYtbBdxglzmPR4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -173,7 +173,7 @@ async def start(client, message):
         await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ ʙᴏᴛ...</i></b>")
         await asyncio.sleep(0.4)
         await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEBt1Jlx6H4hU132BpZrG-DqKF5SveK2QACawUAAqzQYVYtbBdxglzmPR4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -230,7 +230,7 @@ async def start(client, message):
                     InlineKeyboardButton('• ɢᴇᴛ ғʀᴇᴇ or ᴘᴀɪᴅ ᴘʀᴇᴍɪᴜᴍ •', callback_data="premium_info")
                   ]]
             reply_markup = InlineKeyboardMarkup(buttons)
-            m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA") 
+            m=await message.reply_sticker("CAACAgUAAxkBAAECQNBmEPRJUuLrUDvpzQwsvs0KE1w5jgACcAQAAkdoOVaYU-q7wXAETB4E") 
             await asyncio.sleep(1)
             await m.delete()
             await message.reply_photo(
@@ -281,6 +281,8 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ •', callback_data=f'generate_stream_link:{file_id}'),
+                            ],
+                            [
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -487,6 +489,8 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ', callback_data=f'generate_stream_link:{file_id}'),
+                            ],
+                            [
                                 InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
                             ]
                         ]
@@ -560,8 +564,10 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
-              InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
+              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
+             ],
+             [
+              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @LazyDeveloperr
              ]
             ]
         )
@@ -621,8 +627,10 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('• ꜱᴛʀᴇᴀᴍ ', callback_data=f'generate_stream_link:{file_id}'),
-              InlineKeyboardButton(' ᴜᴘᴅᴀᴛᴇꜱ •', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
+              InlineKeyboardButton('• ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ •', callback_data=f'generate_stream_link:{file_id}'),
+             ],
+             [
+              InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/CineflixXLinks') #Don't change anything without contacting me @sewxiy
              ]
             ]
         )
@@ -1299,7 +1307,7 @@ async def support_command(client, message):
     buttons = [
         [
             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/CineflixXLinks"),
-            InlineKeyboardButton("ʜᴇʟᴘ", url="https://t.me/elzamoviebot?start=help")
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/CineflixXLinks")
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
